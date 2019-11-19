@@ -43,7 +43,7 @@ namespace DogRaceWithOption
         {
             //when the timer moves then the dog will automaticaaly move to the right direction 
             d1.Left = d1.Left + objct.dog1();
-            // this code is used to find the winner and display the result 
+            // this code is used to find the winner and display the result for dog 1
             if (objrslt.stop(timer1, d1.Left)==1) {
                 timer1.Stop();
                 winnr = 1;
@@ -52,7 +52,7 @@ namespace DogRaceWithOption
                 button3.Visible = true;
                 reset();
             }
-
+            // this code is used to find the winner and display the result for dog 2
             d2.Left = d2.Left + objct.dog2();
             if (objrslt.stop(timer1, d2.Left) == 1)
             {
@@ -63,7 +63,7 @@ namespace DogRaceWithOption
                 updtAmount();
                 reset();
             }
-
+            // this code is used to find the winner and display the result for dog 3
             d3.Left = d3.Left + objct.dog3();
             if (objrslt.stop(timer1, d3.Left) == 1)
             {
@@ -74,7 +74,7 @@ namespace DogRaceWithOption
                 updtAmount();
                 reset();
             }
-
+            // this code is used to find the winner and display the result  for dog 4
             d4.Left = d4.Left + objct.dog4();
             if (objrslt.stop(timer1, d4.Left) == 1)
             {
@@ -102,15 +102,15 @@ namespace DogRaceWithOption
             button2.Enabled = false;
             
         }
-
+        // when the result is shown start button is disabled so that player has to set bet again 
         private void button3_Click(object sender, EventArgs e)
         {
             button3.Visible = false;
         }
 
-        //the prorcess to update the amount 
+        //the prorcess to update the amount or balance of every player 
         public void updtAmount() {
-
+            // the below we have used split function and condional statement to update amount for player1
             if (Player1.Text.ToString().Split(' ').Length > 1 && Player1.Text.ToString().Split(' ').Length ==7) {
                 String[] rcrd = Player1.Text.ToString().Split(' ');
 
@@ -128,7 +128,7 @@ namespace DogRaceWithOption
 
 
             }
-
+            // the below we have used split function and condional statement to update amount for player 2
             if (Player2.Text.ToString().Split(' ').Length > 1 && Player2.Text.ToString().Split(' ').Length == 7)
             {
                 String[] rcrd = Player2.Text.ToString().Split(' ');
@@ -147,6 +147,7 @@ namespace DogRaceWithOption
 
 
             }
+            // the below we have used split function and condional statement to update amount for player 3
             if (Player3.Text.ToString().Split(' ').Length > 1 && Player3.Text.ToString().Split(' ').Length == 7)
             {
                 String[] rcrd = Player3.Text.ToString().Split(' ');
@@ -181,7 +182,7 @@ namespace DogRaceWithOption
         private void button1_Click(object sender, EventArgs e)
         {
            
-            //keep the data store in the textbox or label for better clearance 
+           // with conditional statement and a variable it is shown that this particular player has set bet on that dog and below code is for player 1
             count++;
             if (count == 1) {
                 String[] sz = Player1.Text.ToString().Split(' ');
@@ -192,9 +193,12 @@ namespace DogRaceWithOption
                 }
                 else if (sz.Length > 1)
                 {
+                     // message box displaying that to fill correct values
                     MessageBox.Show("choose the correct option ");
                 }
-            } else if (count == 2) {
+                // with conditional statement and a variable it is shown that this particular player has set bet on that dog and below code is for player 2
+            }
+            else if (count == 2) {
                 String[] sz1 = Player2.Text.ToString().Split(' ');
                 if (sz1.Length > 1 && nmdog.Value < 5 && nmbet.Value <= player2)
                 {
@@ -203,9 +207,12 @@ namespace DogRaceWithOption
                 }
                 else if (sz1.Length > 1)
                 {
+                    // message box displaying that to fill correct values
                     MessageBox.Show("choose the correct option ");
                 }
-            } else if (count==3) {
+                // with conditional statement and a variable it is shown that this particular player has set bet on that dog and below code is for player 3
+            }
+            else if (count==3) {
                 String[] sz3 = Player3.Text.ToString().Split(' ');
                 if (sz3.Length > 1 && nmdog.Value < 5 && nmbet.Value <= player3)
                 {
@@ -214,6 +221,7 @@ namespace DogRaceWithOption
                 }
                 else if(sz3.Length>1)
                 {
+                    // message box displaying that to fill correct values
                     MessageBox.Show("choose the correct option ");
                 }
             }

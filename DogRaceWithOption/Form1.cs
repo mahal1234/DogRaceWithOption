@@ -20,22 +20,25 @@ namespace DogRaceWithOption
             InitializeComponent();
         }
 
-
+        // this is for selection of player that which player is selected and this work with variables seeing that player should be once added
         public void passValue(int player){
 
             MessageBox.Show("" + player);
+            // if the player 1 is selected it wil display message and text written about balance of the player
             if (player == 1)
             {
                 MessageBox.Show("Sandy is selected for the race ");
                 
                 obj.Player1.Text = "Sandy has 100 dollar ";
             }
+            // if the player 2 is selected it wil display message and text written about balance of the player
             else if (player == 2) {
                 MessageBox.Show("Anny is selected for the race ");
 
                 
                 obj.Player2.Text = "Anny has 100 dollar ";
             }
+            // if the player 3 is selected it wil display message and text written about balance of the player
             else if (player == 3)
             {
                 MessageBox.Show("Mandy is selected for the race ");
@@ -62,6 +65,7 @@ namespace DogRaceWithOption
 
         private void Player2_Click(object sender, EventArgs e)
         {
+            //this is for player selection 
             if (player < 3)
             {
                 player++;
@@ -76,6 +80,7 @@ namespace DogRaceWithOption
 
         private void Player3_Click(object sender, EventArgs e)
         {
+            //this is for player selection 
             if (player < 3)
             {
                 player++;
@@ -92,6 +97,7 @@ namespace DogRaceWithOption
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //this is for player selection 
             if (player > 0 && player <= 3)
             {
                
@@ -100,6 +106,11 @@ namespace DogRaceWithOption
             else {
                 MessageBox.Show("you have to select minimum  2 player ");
             }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

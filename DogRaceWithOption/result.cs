@@ -14,8 +14,9 @@ namespace DogRaceWithOption
     }
     public class result
     {
-        
+        //timer function used that is working with position of images
         public int  stop(Timer timer,int position ) {
+            // if the dog reaches the 700 position timer will stop
             if (position > 700)
             {
                 timer.Stop();
